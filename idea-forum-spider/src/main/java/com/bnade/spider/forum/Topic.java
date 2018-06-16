@@ -36,6 +36,18 @@ public interface Topic {
 	String getLink();
 
 	/**
+	 * 获取回帖数
+	 * @return
+	 */
+	int getReplyCount();
+
+	/**
+	 * 获取发帖时间
+	 * @return
+	 */
+	long getPostDate();
+
+	/**
 	 * 设置帖子id
 	 * 
 	 * @param id 帖子id
@@ -61,4 +73,21 @@ public interface Topic {
 	 */
 	void setLink(String link);
 	
+	/**
+	 * 设置回帖数
+	 * @param replies 回帖数
+	 */
+	void setReplyCount(int replyCount);
+	
+	/**
+	 * 设置发帖时间
+	 * @param postDate 发帖时间
+	 */
+	void setPostDate(long postDate);
+	
+	/**
+	 * 设置最新回复时间
+	 * @param replyDate 回复时间
+	 */
+	void setReplyDate(long replyDate);
 }

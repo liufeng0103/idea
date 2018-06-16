@@ -1,5 +1,6 @@
 package com.bnade.idea.web;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.scheduling.annotation.Scheduled;
@@ -13,12 +14,12 @@ import com.bnade.spider.forum.nga.NgaForum;
 public class ScheduledTasks {
 	
 	private static List<Topic> topics;
-
-	@Scheduled(fixedRate = 5000)
+	
+	@Scheduled(fixedRate = 10000)
     public void runForumSpider() {
         Forum forum = new NgaForum();
         topics = forum.getPage(1).getTopics();
-        System.out.println(topics);
+        System.out.println(new Date() + " " + topics.size());
     }
 
 	public static List<Topic> getTopics() {

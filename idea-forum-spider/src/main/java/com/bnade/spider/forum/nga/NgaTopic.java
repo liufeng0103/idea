@@ -7,43 +7,31 @@ public class NgaTopic implements Topic {
 	private int id;
 	private String title;
 	private String author;
-	
 	private String link;
-	private Integer replies;
-	private Long postDate;
+	private int replyCount;
+	private long postDate;
+	private long replyDate;
 
 	public NgaTopic() {
 	}
 
-	public NgaTopic(Integer id, String link, String title, Integer replies, String author, Long postDate) {
+	public NgaTopic(Integer id, String link, String title, Integer replyCount, String author, Long postDate) {
 		this.id = id;
 		this.link = link;
 		this.title = title;
-		this.replies = replies;
+		this.replyCount = replyCount;
 		this.author = author;
 		this.postDate = postDate;
 	}
 
 	@Override
 	public String toString() {
-		return "Topic{" + "id=" + id + ", link='" + link + '\'' + ", title='" + title + '\'' + ", replies=" + replies
+		return "Topic{" + "id=" + id + ", link='" + link + '\'' + ", title='" + title + '\'' + ", replyCount=" + replyCount
 				+ ", author='" + author + '\'' + ", postDate=" + postDate + '}';
 	}
 
 	public int getId() {
 		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getLink() {
-		return link;
-	}
-
-	public void setLink(String link) {
-		this.link = link;
 	}
 
 	/* (non-Javadoc)
@@ -55,27 +43,39 @@ public class NgaTopic implements Topic {
 	}
 
 	/* (non-Javadoc)
-	 * @see com.bnade.idea.nga.Topic#setTitle(java.lang.String)
-	 */
-	@Override
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public Integer getReplies() {
-		return replies;
-	}
-
-	public void setReplies(Integer replies) {
-		this.replies = replies;
-	}
-
-	/* (non-Javadoc)
 	 * @see com.bnade.idea.nga.Topic#getAuthor()
 	 */
 	@Override
 	public String getAuthor() {
 		return author;
+	}
+
+	public String getLink() {
+		return link;
+	}
+
+	public int getReplyCount() {
+		return replyCount;
+	}
+
+	public long getPostDate() {
+		return postDate;
+	}
+
+	public long getReplyDate() {
+		return replyDate;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.bnade.idea.nga.Topic#setTitle(java.lang.String)
+	 */
+	@Override
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	/* (non-Javadoc)
@@ -86,11 +86,21 @@ public class NgaTopic implements Topic {
 		this.author = author;
 	}
 
-	public Long getPostDate() {
-		return postDate;
+	public void setLink(String link) {
+		this.link = link;
 	}
 
-	public void setPostDate(Long postDate) {
+	public void setReplyCount(int replies) {
+		this.replyCount = replies;
+	}
+
+	public void setPostDate(long postDate) {
 		this.postDate = postDate;
 	}
+
+	public void setReplyDate(long replyDate) {
+		this.replyDate = replyDate;
+	}
+	
+	
 }
